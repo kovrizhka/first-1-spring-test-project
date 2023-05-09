@@ -11,4 +11,9 @@
           class="ru.kovrizhkin.springlearn.TranceMusic">
     </bean>
 
+    <bean id="musicPlayer"
+          class="ru.kovrizhkin.springlearn.MusicPlayer">
+        <constructor-arg ref="musicBean"/>
+    </bean>
+
 </beans>
