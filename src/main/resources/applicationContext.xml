@@ -8,7 +8,7 @@
         http://www.springframework.org/schema/context/spring-context.xsd">
 
     <bean id="musicBean"
-          class="ru.kovrizhkin.springlearn.TranceMusic">
+          class="ru.kovrizhkin.springlearn.RockMusic">
     </bean>
 
     <bean id="musicPlayer"
