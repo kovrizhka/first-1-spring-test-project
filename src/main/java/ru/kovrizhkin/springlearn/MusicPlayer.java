@@ -1,13 +1,39 @@
 package ru.kovrizhkin.springlearn;
 
-public class MusicPlayer {
-    private Music music;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
-    public MusicPlayer(Music music) {
-        this.music = music;
+public class MusicPlayer {
+    private List<Music> musicList = new ArrayList<>();
+    private String name;
+    private int volume;
+
+    public MusicPlayer() {}
+
+    public void setMusicList(List<Music> musicList) {
+        this.musicList = musicList;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getVolume() {
+        return volume;
+    }
+
+    public void setVolume(int volume) {
+        this.volume = volume;
     }
 
     public void playMusic() {
-        System.out.println("Now playing: " + music.getSong());
+        for (Music music: musicList) {
+            System.out.println("Now playing: " + music.getSong());
+        }
     }
 }
