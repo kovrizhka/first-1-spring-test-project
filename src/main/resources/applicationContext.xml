@@ -15,35 +15,32 @@
     </bean>
 
     <bean id="classicalBean"
-          class="ru.kovrizhkin.springlearn.ClassicalMusic">
+          class="ru.kovrizhkin.springlearn.ClassicalMusic"
+            scope="prototype"
+            init-method="doMyInit"
+            destroy-method="doMyDestroy"
+            factory-method="getClassicalMusic">
     </bean>
 
     <bean id="tranceBean"
           class="ru.kovrizhkin.springlearn.TranceMusic">
     </bean>
 
-<!--    <bean id="musicListBean"-->
-<!--          class="ru.kovrizhkin.springlearn.MusicPlayer">-->
-<!--        <util:list>-->
-<!--            <ref bean="rockBean"/>-->
-<!--            <ref bean="classicalBean"/>-->
-<!--            <ref bean="tranceBean"/>-->
-<!--        </util:list>-->
+
+<!--    <bean id="musicPlayer"-->
+<!--          class="ru.kovrizhkin.springlearn.MusicPlayer"-->
+<!--            scope="prototype">-->
+<!--        -->
+<!--        <property name="musicList">-->
+<!--                <list>-->
+<!--                    <ref bean="rockBean"/>-->
+<!--                    <ref bean="classicalBean"/>-->
+<!--                    <ref bean="tranceBean"/>-->
+<!--                </list>-->
+<!--        </property>-->
+<!--        -->
+<!--        <property name="name" value="${musicPlayer.name}"/>-->
+<!--        <property name="volume" value="${musicPlayer.volume}"/>-->
 <!--    </bean>-->
-
-    <bean id="musicPlayer"
-          class="ru.kovrizhkin.springlearn.MusicPlayer">
-        <property name="musicList">
-                <list>
-                    <ref bean="rockBean"/>
-                    <ref bean="classicalBean"/>
-                    <ref bean="tranceBean"/>
-                </list>
-        </property>
-
-        <property name="name" value="${musicPlayer.name}"/>
-
-        <property name="volume" value="${musicPlayer.volume}"/>
-    </bean>
 
 </beans>
