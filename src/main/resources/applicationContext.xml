@@ -22,18 +22,24 @@
           class="ru.kovrizhkin.springlearn.TranceMusic">
     </bean>
 
-    <bean id="musicListBean"
-          class="ru.kovrizhkin.springlearn.MusicPlayer">
-        <util:list>
-            <ref bean="rockBean"/>
-            <ref bean="classicalBean"/>
-            <ref bean="tranceBean"/>
-        </util:list>
-    </bean>
+<!--    <bean id="musicListBean"-->
+<!--          class="ru.kovrizhkin.springlearn.MusicPlayer">-->
+<!--        <util:list>-->
+<!--            <ref bean="rockBean"/>-->
+<!--            <ref bean="classicalBean"/>-->
+<!--            <ref bean="tranceBean"/>-->
+<!--        </util:list>-->
+<!--    </bean>-->
 
     <bean id="musicPlayer"
           class="ru.kovrizhkin.springlearn.MusicPlayer">
-        <property name="musicList" ref="musicListBean"/>
+        <property name="musicList">
+                <list>
+                    <ref bean="rockBean"/>
+                    <ref bean="classicalBean"/>
+                    <ref bean="tranceBean"/>
+                </list>
+        </property>
 
         <property name="name" value="${musicPlayer.name}"/>
 
