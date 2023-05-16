@@ -7,9 +7,12 @@ public class MusicPlayer {
     private List<Music> musicList = new ArrayList<>();
     private String name;
     private int volume;
+    private Music music;
 
 
-    public MusicPlayer() {}
+    public MusicPlayer(Music music) {
+        this.music = music;
+    }
 
     public void setMusicList(List<Music> musicList) {
         this.musicList = musicList;
@@ -32,8 +35,6 @@ public class MusicPlayer {
     }
 
     public void playMusic() {
-        for (Music music: musicList) {
-            System.out.println("Now playing: " + music.getSong());
-        }
+        System.out.println("Now playing: " + music.getSong());
     }
 }

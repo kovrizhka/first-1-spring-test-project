@@ -10,9 +10,7 @@
 
     <context:property-placeholder location="musicPlayer.properties"/>
 
-    <bean id="rockBean"
-          class="ru.kovrizhkin.springlearn.RockMusic">
-    </bean>
+    <context:component-scan base-package="ru.kovrizhkin.springlearn"/>
 
     <bean id="classicalBean"
           class="ru.kovrizhkin.springlearn.ClassicalMusic"
