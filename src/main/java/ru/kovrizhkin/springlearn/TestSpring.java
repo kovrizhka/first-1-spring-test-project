@@ -8,18 +8,22 @@ public class TestSpring {
                 "applicationContext.xml"
         );
 
-        Music music = context.getBean("rockMusic", Music.class);
-
-        MusicPlayer musicPlayer = new MusicPlayer(music);
-
-        Music music1 = context.getBean("tranceMusic", Music.class);
-
-        MusicPlayer tranceMusicPlayer = new MusicPlayer(music1);
-
-
-
-        tranceMusicPlayer.playMusic();
+        MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
         musicPlayer.playMusic();
+
+        /**
+         * Injection by @Component
+         */
+//        Music music = context.getBean("rockMusic", Music.class);
+//
+//        MusicPlayer musicPlayer = new MusicPlayer(music);
+//
+//        Music music1 = context.getBean("tranceMusic", Music.class);
+//
+//        MusicPlayer tranceMusicPlayer = new MusicPlayer(music1);
+//
+//        tranceMusicPlayer.playMusic();
+//        musicPlayer.playMusic();
 
 
 

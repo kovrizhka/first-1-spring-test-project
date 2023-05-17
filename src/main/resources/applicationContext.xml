@@ -12,17 +12,19 @@
 
     <context:component-scan base-package="ru.kovrizhkin.springlearn"/>
 
-    <bean id="classicalBean"
-          class="ru.kovrizhkin.springlearn.ClassicalMusic"
-            scope="prototype"
-            init-method="doMyInit"
-            destroy-method="doMyDestroy"
-            factory-method="getClassicalMusic">
-    </bean>
 
-    <bean id="tranceBean"
-          class="ru.kovrizhkin.springlearn.TranceMusic">
-    </bean>
+
+<!--    <bean id="classicalBean"-->
+<!--          class="ru.kovrizhkin.springlearn.ClassicalMusic"-->
+<!--            scope="prototype"-->
+<!--            init-method="doMyInit"-->
+<!--            destroy-method="doMyDestroy"-->
+<!--            factory-method="getClassicalMusic">-->
+<!--    </bean>-->
+
+<!--    <bean id="tranceBean"-->
+<!--          class="ru.kovrizhkin.springlearn.TranceMusic">-->
+<!--    </bean>-->
 
 
 <!--    <bean id="musicPlayer"-->
