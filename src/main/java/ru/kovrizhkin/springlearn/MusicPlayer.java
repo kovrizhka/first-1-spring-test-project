@@ -12,16 +12,17 @@ public class MusicPlayer {
     private String name;
     private int volume;
     private Music music;
-    private ClassicalMusic classicalMusic;
+    private RockMusic rockMusic;
+    private TranceMusic tranceMusic;
 
-
-    public MusicPlayer(Music music) {
-        this.music = music;
-    }
     @Autowired
-    public void setMusic(Music music) {
-        this.music = music;
+    public MusicPlayer (RockMusic rockMusic, TranceMusic tranceMusic) {
+        this.rockMusic = rockMusic;
+        this.tranceMusic = tranceMusic;
     }
+
+
+
     public void setMusicList(List<Music> musicList) {
         this.musicList = musicList;
     }
@@ -42,7 +43,7 @@ public class MusicPlayer {
         this.volume = volume;
     }
 
-    public void playMusic() {
-        System.out.println("Now playing: " + music.getSong());
+    public String playMusic() {
+        return "Now playing: " + tranceMusic.getSong();
     }
 }
