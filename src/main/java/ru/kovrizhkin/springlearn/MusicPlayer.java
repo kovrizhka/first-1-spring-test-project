@@ -1,6 +1,7 @@
 package ru.kovrizhkin.springlearn;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -11,14 +12,15 @@ public class MusicPlayer {
     private List<Music> musicList = new ArrayList<>();
     private String name;
     private int volume;
-    private Music music;
-    private RockMusic rockMusic;
-    private TranceMusic tranceMusic;
+
+    private Music music1;
+    private Music music2;
 
     @Autowired
-    public MusicPlayer (RockMusic rockMusic, TranceMusic tranceMusic) {
-        this.rockMusic = rockMusic;
-        this.tranceMusic = tranceMusic;
+    public MusicPlayer(@Qualifier("tranceMusic") Music music1,
+                       @Qualifier("rockMusic") Music music2) {
+        this.music1 = music1;
+        this.music2 = music2;
     }
 
 
@@ -44,6 +46,6 @@ public class MusicPlayer {
     }
 
     public String playMusic() {
-        return "Now playing: " + tranceMusic.getSong();
+        return "Now playing: " + music1.getSong() + ", " + music2.getSong();
     }
 }
