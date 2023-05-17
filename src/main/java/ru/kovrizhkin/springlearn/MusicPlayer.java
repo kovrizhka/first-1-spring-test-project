@@ -14,11 +14,14 @@ public class MusicPlayer {
     private Music music;
     private ClassicalMusic classicalMusic;
 
-    @Autowired
+
     public MusicPlayer(Music music) {
         this.music = music;
     }
-
+    @Autowired
+    public void setMusic(Music music) {
+        this.music = music;
+    }
     public void setMusicList(List<Music> musicList) {
         this.musicList = musicList;
     }
