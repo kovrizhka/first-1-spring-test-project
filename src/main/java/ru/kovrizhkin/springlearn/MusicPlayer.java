@@ -59,7 +59,9 @@ public class MusicPlayer {
 //    }
 
     public String playMusic() {
+        String track;
         ArrayList<String> musicList = musicEnumeration.getSong();
+        return track;
 
     }
 }

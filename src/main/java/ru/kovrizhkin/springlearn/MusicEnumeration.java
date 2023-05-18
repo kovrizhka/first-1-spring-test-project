@@ -2,10 +2,14 @@ package ru.kovrizhkin.springlearn;
 
 import java.util.ArrayList;
 
-public enum MusicEnumeration {
+public enum MusicEnumeration implements Music{
+    TRANCE, ROCK, CLASSICAL;
     private TranceMusic tranceMusic;
     private RockMusic rockMusic;
     private ClassicalMusic classicalMusic;
-    TRANCE(), ROCK, CLASSICAL;
 
+    @Override
+    public ArrayList<String> getSong() {
+        return null;
+    }
 }
