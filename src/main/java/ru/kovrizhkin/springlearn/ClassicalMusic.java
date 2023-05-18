@@ -2,23 +2,30 @@ package ru.kovrizhkin.springlearn;
 
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
 
+@Component
 public class ClassicalMusic implements Music{
-    private ClassicalMusic() {}
 
-    public static ClassicalMusic getClassicalMusic() {
-        return new ClassicalMusic();
-    }
+    private ArrayList<String> classicalMusicList = new ArrayList<>() {{
+        add("Magic Flute");
+        add("Rhythm Of The Rain");
+        add("Love Story");
+    }};
 
-    public void doMyInit() {
-        System.out.println("Initialization in progress...");
-    }
-
-    public void doMyDestroy() {
-        System.out.println("I'm destroying");
-    }
+//    public static ClassicalMusic getClassicalMusic() {
+//        return new ClassicalMusic();
+//    }
+//
+//    public void doMyInit() {
+//        System.out.println("Initialization in progress...");
+//    }
+//
+//    public void doMyDestroy() {
+//        System.out.println("I'm destroying");
+//    }
     @Override
-    public String getSong() {
-        return "Magic flute";
+    public ArrayList<String> getSong() {
+        return this.classicalMusicList;
     }
 }
