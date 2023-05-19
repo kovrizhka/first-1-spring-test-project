@@ -5,14 +5,10 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
-import java.util.List;
+import java.util.Random;
 
 @Component
 public class MusicPlayer {
-//    private List<Music> musicList = new ArrayList<>();
-//    private String name;
-//    private int volume;
-    private MusicEnumeration musicEnumeration;
 
     private Music music1;
     private Music music2;
@@ -58,10 +54,24 @@ public class MusicPlayer {
 //        this.volume = volume;
 //    }
 
-    public String playMusic() {
-        String track;
-        ArrayList<String> musicList = musicEnumeration.getSong();
-        return track;
+    public String playMusic(MusicType musicType) {
 
+        Random random = new Random();
+        int index = random.ints(0, 2).findFirst()
+                .getAsInt();
+
+        if (musicType.equals(MusicType.CLASSICAL)) {
+            ArrayList<String> classicalList = music3.getSong();
+            return classicalList.get(index);
+        }
+        if (musicType.equals(MusicType.ROCK)) {
+            ArrayList<String> rockList = music2.getSong();
+            return rockList.get(index);
+        }
+        if (musicType.equals(MusicType.TRANCE)) {
+            ArrayList<String> tranceList = music1.getSong();
+            return tranceList.get(index);
+        }
+        return null;
     }
 }
